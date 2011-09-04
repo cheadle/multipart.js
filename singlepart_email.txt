@@ -1,5 +1,5 @@
                                                                                                                                                                                                                                                                
-Delivered-To: gcheadle@gmail.com
+Delivered-To: test@test.com
 Received: by 10.231.201.7 with SMTP id ey7cs29466ibb;
         Sun, 4 Sep 2011 07:37:36 -0700 (PDT)
 Received: by 10.150.104.20 with SMTP id b20mr2475155ybc.301.1315147055651;
@@ -19,7 +19,7 @@ Received: from ([10.30.2.51])
 	by intmail2.bcbst.com with SMTP  id G594WN1.1944383;
 	Sun, 04 Sep 2011 10:37:30 -0400
 From: "EOB Notice" <EOB_Notice@bcbst.com>
-To: gcheadle@gmail.com
+To: test@test.com
 Subject: New EOB Posting
 Date: Sun, 04 Sep 2011 10:37:30 -0400
 Message-ID: <20110904-10373007-3bd4@bcapp059.bcbst.com>
@@ -27,12 +27,4 @@ MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"
 
-Your latest explanation of benefits (EOB) from BlueCross BlueShield was just posted to your secure BlueAccess account.
-
-CLICK HERE TO LOG ONTO YOUR BLUEACCESS ACCOUNT TO VIEW THE NEW EOB.  If you have problems with the link, please copy and paste this address in your browser: https://www.bcbst.com/wps/myportal/myeobs?eobdt=9/7/2011
-
-Thank you for using advance EOB notices from BlueCross BlueShield of Tennessee.
-
-Please do not reply directly to this email. This email was sent from a notification-only address that cannot accept incoming email.
------------------------------------------------------
-Please see the following link for the BlueCross BlueShield E-mail disclaimer:  http://www.bcbst.com/email_disclaimer.shtm
+I am a simple email.
