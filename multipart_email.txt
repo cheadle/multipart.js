@@ -1,27 +1,27 @@
                                                                                                                                                                                                                                                                
-Delivered-To: gcheadle@gmail.com
+Delivered-To: greg@greg.com
 Received: by 10.231.201.7 with SMTP id ey7cs295ibb;
         Wed, 17 Aug 2011 17:56:05 -0700 (PDT)
 Received: by 10.227.200.146 with SMTP id ew18mr91176wbb.16.1313628963936;
         Wed, 17 Aug 2011 17:56:03 -0700 (PDT)
-Return-Path: <rich@uservoice.com>
+Return-Path: <test@uservoice.com>
 Received: from mail-ww0-f44.google.com (mail-ww0-f44.google.com [74.125.82.44])
         by mx.google.com with ESMTPS id fr17si4292837wbb.121.2011.08.17.17.56.01
         (version=TLSv1/SSLv3 cipher=OTHER);
         Wed, 17 Aug 2011 17:56:02 -0700 (PDT)
-Received-SPF: pass (google.com: domain of rich@uservoice.com designates 74.125.82.44 as permitted sender) client-ip=74.125.82.44;
-Authentication-Results: mx.google.com; spf=pass (google.com: domain of rich@uservoice.com designates 74.125.82.44 as permitted sender) smtp.mail=rich@uservoice.com
+Received-SPF: pass (google.com: domain of test@uservoice.com designates 74.125.82.44 as permitted sender) client-ip=74.125.82.44;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of test@uservoice.com designates 74.125.82.44 as permitted sender) smtp.mail=test@uservoice.com
 Received: by mail-ww0-f44.google.com with SMTP id 5so1040332wwf.13
-        for <gcheadle@gmail.com>; Wed, 17 Aug 2011 17:56:01 -0700 (PDT)
+        for <greg@greg.com>; Wed, 17 Aug 2011 17:56:01 -0700 (PDT)
 Received: by 10.227.55.66 with SMTP id t2mr60102wbg.109.1313628961175; Wed, 17
  Aug 2011 17:56:01 -0700 (PDT)
 MIME-Version: 1.0
 Received: by 10.227.146.130 with HTTP; Wed, 17 Aug 2011 17:55:41 -0700 (PDT)
-From: Richard White <rich@uservoice.com>
+From: Richard <test@uservoice.com>
 Date: Wed, 17 Aug 2011 17:55:41 -0700
 Message-ID: <CABDuwKvCeevzWAHJgG7-FKFWGFBV3Px8XejJ4UHKfTo7MEw6QA@mail.gmail.com>
 Subject: Good to finally catch up
-To: Gregory Cheadle <gcheadle@gmail.com>
+To: Greg <greg@greg.com>
 Content-Type: multipart/mixed; boundary=20cf3002587a98fab604aabd1387
 
 --20cf3002587a98fab604aabd1387
@@ -34,15 +34,12 @@ It was good to finally find some time to connect. I've attached the Ruby
 practical that we spoke about. Ship that back to me at your leisure and I'll
 intro you to some other folks around here.
 
-Richard White
-CEO, UserVoice.com
+Richard
 
 --20cf3002587a98faae04aabd1385
 Content-Type: text/html; charset=UTF-8
 
-It was good to finally find some time to connect. I&#39;ve attached the Ruby practical that we spoke about. Ship that back to me at your leisure and I&#39;ll intro you to some other folks around here.<div><br clear="all">Richard White<br>
-
-CEO, UserVoice.com<br>
+It was good to finally find some time to connect. I&#39;ve attached the Ruby practical that we spoke about. Ship that back to me at your leisure and I&#39;ll intro you to some other folks around here.<div><br clear="all">Richard<br>
 </div>
 
 --20cf3002587a98faae04aabd1385--
