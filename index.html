@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+	<script src="jquery-1.5.2.min.js"></script>
+	<script src="mailmod.js"></script>
+	<script>
+		$(document).ready(function(){
+			MailMod.loadEmail('multipart_email.txt');
+			//MailMod.loadEmail('singlepart_email.txt');
+		});
+	</script>
+	<style>
+		div.part { margin-top:20px; padding:20px; font-weight:bold; border-top:1px solid #DDD; }
+		div.header { margin:0 20px; color:green; }
+		div.content { margin:20px; }
+	</style>
+</head>
+<body>
+	<div id="to"></div>
+	<div id="from"></div>
+	<div id="subject"></div>
+	<div id="date"></div>
+	<div id="content_type"></div>
+	<div id="parts"></div>
+</body>
+</html>
