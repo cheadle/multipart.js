@@ -7,7 +7,7 @@ var MailMod = (function() {
 	function Email(str) {
 		var email = Part(str);
 		
-		if (isMultiPart(email)) {
+		if (email.multiPart) {
 			email.parts = getParts(email);
 		} else {
 			// TODO: handle single part emails
@@ -22,21 +22,23 @@ var MailMod = (function() {
 		var parts = [];
 		
 		part.raw = str;
-		part.contentType = getContentType(str);
-		part.mimeType = getMimeType(part);
-		part.boundary = getBoundary(part);
-		part.bodyIndex = getBodyIndex(part);
-		part.contentBody = getBodyString(part);
+		part.contentType = (/^Content-Type: ((.|\n )+)\n/m).exec(part.raw)[1];
+		part.multiPart = (/^multipart\/(.+);/i).test(part.contentType);
+		part.mimeType = (/^(.+);/i).exec(part.contentType)[1];
+		part.hasBoundary = (/boundary=(.+)/).exec(part.contentType);
+		part.boundary = part.hasBoundary ? part.hasBoundary[1] : null;
+		part.bodyIndex = (/(\n\n)/m).exec(part.raw).index;
+		part.contentBody = part.raw.substring(part.bodyIndex);
 		
 		// every part has a header
-		part.header = Header(getHeaderString(part));
-		
+		part.header = Header(part);
 		return part;
 	}
 	
 	// header object
-	function Header(str) {
+	function Header(part) {
 		var header = {};
+		var str = part.raw.substring(0, part.bodyIndex);
 		var fields = str.replace(/\n\s+/gm," ").split(/\n/gm);
 		
 		var recievedChain = []; // TODO: handle 'Recieved' header chain
@@ -54,12 +56,12 @@ var MailMod = (function() {
 	// recurse to get sub parts
 	function getParts(part) {
 		var parts = [];
-		var partStrings = getBodyString(part).split("--" + part.boundary);
+		var partStrings = part.contentBody.split("--" + part.boundary);
 		
 		for (var i=0;i < partStrings.length;i++) {
 			if (isValidPart(partStrings[i])) {
 				var newPart = Part(partStrings[i]);
-				if (isMultiPart(newPart)) {
+				if (newPart.multiPart) {
 					newPart.parts = getParts(newPart);
 				}
 				parts.push(newPart);
@@ -69,46 +71,8 @@ var MailMod = (function() {
 		return parts;
 	}
 	
-	// utility methods
 	function isValidPart(str) {
 		return (/^Content-Type: ((.|\n )+)\n/m).test(str);
-	}
-	
-	function isMultiPart(part) {
-		return (/^multipart\/(.+);/i).test(part.contentType);
-	}
-	
-	function getContentType(str) {
-		return (/^Content-Type: ((.|\n )+)\n/m).exec(str)[1];
-	}
-	
-	function getMimeType(part) {
-		return (/^(.+);/i).exec(part.contentType)[1];
-	}
-	
-	function getHeaderString(part) {
-		return part.raw.substring(0, part.bodyIndex);
-	}
-	
-	function getBodyString(part) {
-		return part.raw.substring(part.bodyIndex);
-	}
-	
-	// get boundary if one exists
-	function getBoundary(part) {
-		var boundary = (/boundary=(.+)/);
-		if (boundary.test(part.contentType)) {
-			return boundary.exec(part.contentType)[1];
-		}
-	}
-	
-	// get body index from boundary or first blank line
-	function getBodyIndex(part) {		
-		if (part.boundary) {
-			return part.raw.indexOf("--" + part.boundary);
-		} else {
-			return (/(\n\n)/m).exec(part.raw).index;
-		}
 	}
 	
 	// load email via xhr
