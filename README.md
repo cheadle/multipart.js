@@ -4,7 +4,7 @@ mailmod is a javascript module for parsing multipart emails client side. It is d
 
 Demo
 ----------------------------
-`ruby rmailmod.rb`
+`index.html`
 
 Next Steps
 ------------------
