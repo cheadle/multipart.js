@@ -8,7 +8,7 @@ Demo
 
 Next Steps
 ------------------
-Next steps might be to parse 'Received' headers into an array in the Header object. That would allow easy access the 'Received' header chain for features like spam detection. Perhaps also add support for a queue or collection of emails. 
+Next steps might be to parse 'Received' headers into an array in the Header object. That would allow easy access the 'Received' header chain for features like spam detection. Perhaps also add support for a queue or collection of emails. And add some methods to Email object for accessing mime type content, attachments, etc.
 
 License
 ------------

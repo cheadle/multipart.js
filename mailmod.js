@@ -44,7 +44,7 @@ var MailMod = (function() {
 		var recievedChain = []; // TODO: handle 'Recieved' header chain
 
 		$.each(fields, function(index, value) {
-			var h = value.split(': '); // TODO split only on first :
+			var h = value.split(': '); // TODO split only on first : with regex
 			if (h.length > 1) {
 				header[h[0]] = h[1];
 			}
